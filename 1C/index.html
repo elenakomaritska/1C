@@ -53,7 +53,7 @@
                   <a href="#" data-custom-active="link-faq" data-custom-scroll-to='faq'>Вопросы</a>
                 </li>
                 <li>
-                  <a href="#" data-custom-active="" data-custom-scroll-to='intro'>Отправить заявку</a>
+                  <a href="#" data-toggle="modal" data-target="#formModal">Отправить заявку</a>
                 </li>
               </ul>
             </div>
@@ -652,62 +652,69 @@
       </section>
     </main>
     <footer class="section-50 section-sm-30 page-footer bg-gray-base context-dark">
-      <div class="offset-top-30 offset-md-top-60 inset-md-left-55 inset-md-right-55">
-        <form class="rd-mailform" data-form-output="form-subscribe-footer" data-form-type="subscribe" method="post"
-          action="bat/rd-mailform.php">
-          <div class="form-group">
-            <div class="input-group input-group-sm"><span class="input-group-addon"><span
-                  class="input-group-icon mdi mdi-email"></span></span>
-              <input class="form-control" placeholder="Enter your E-Mail" type="email" name="email"
-                data-constraints="@Email @Required" /><span class="input-group-btn">
-                <button class="btn btn-sm btn-primary" type="submit">Subscribe</button></span>
-            </div>
-          </div>
-          <div class="form-output" id="form-subscribe-footer"></div>
-        </form>
-      </div>
-      <!-- Default footer-->
       <div class="shell text-sm-left">
-        <div class="footer-brand reveal-inline-block"><a href="index.html"> <img
-              class="img-responsive reveal-inline-block" src="images/logo-footer-212x55.png" width="138" height="46"
-              alt=""></a></div>
-        <div class="pull-sm-right offset-top-30 offset-sm-top-10">
-          <ul class="list-inline">
-            <li><a class="icon fa fa-facebook icon-xxs icon-circle icon-gray-darkest-filled" href="#"></a></li>
-            <li><a class="icon fa fa-twitter icon-xxs icon-circle icon-gray-darkest-filled" href="#"></a></li>
-            <li><a class="icon fa fa-google-plus icon-xxs icon-circle icon-gray-darkest-filled" href="#"></a></li>
-            <li><a class="icon fa fa-linkedin icon-xxs icon-circle icon-gray-darkest-filled" href="#"></a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
-
-      <!-- Modal -->
-      <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Modal Header</h4>
+        <div class="range range-xs-center range-sm-justify offset-top-0 cell-xs-12">
+          <div class="footer-brand reveal-inline-block cell-xs-12 cell-sm-4">
+            <a href="index.html">
+              <img class="img-responsive reveal-inline-block" src="images/footer-logo.png" width="138" height="46"
+                alt="">
+            </a>
+            <p>
+              ООО "Цедрикс ИТ" ИНН 2221128080<br>
+              г. Барнаул, пр-т Красноармейский, 108А<br>
+              info@cedrixit.ru &nbsp; +7 (3852) 58-01-50
+            </p>
+          </div>
+          <div class="range range-xs-center range-sm-justify offset-top-0 cell-xs-10 cell-sm-8 cell-md-6 cell-lg-5">
+            <div class=" text-center offset-top-30 offset-sm-top-0">
+              <img class="img-responsive reveal-inline-block" src="images/1c.png" width="45" height="45" alt="">
+              <img class="img-responsive previevImg" width="85" height="115" src="images/doc.jpg" alt="" />
             </div>
-            <div class="modal-body">
-              <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <div class=" offset-top-30 offset-sm-top-10">
+              <h5>«1С:Аренда ПО»</h5>
+              <p>Мы являемся действующим партнером сети<br>
+                «1С:Аренда ПО». Работая в облачном сервисе,<br>
+                вы используете лицензионное ПО.<br>
+              </p>
             </div>
           </div>
-
         </div>
+      </div>
+      <div class="shell copyright offset-top-30">
+        <span>© Copyright Cedrix IT 2020.</span>
+        <span><a class="link" href="private.html">Политика конфиденциальности</a></span>
       </div>
     </footer>
-    <!--coded by jeremyLuis-->
+    <!-- Modal -->
+    <div id="formModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <form action="/call.php" class="form" method="post">
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            <h3 class='text-primary text-bold' id="modalTitle">
+              Отправить заявку
+            </h3>
+            <input class="form-control form-group" name="name" required="" type="text" placeholder="Имя*" value="">
+            <input class="form-control form-group" name="phone" required="" type="text" placeholder="Телефон*" value="">
+            <input class="form-control form-group" name="email" type="text" value="" placeholder="Email">
+            <input class="form-control form-group" name="inn" type="text" value=""
+              placeholder="ИНН основной организации">
+            <div class="text-dark">
+              Настоящим в соответствии с ФЗ № 152-ФЗ «О персональных данных» от 27.07.2006, отправляя данную форму, вы
+              подтверждаете свое <a class="text-primary" href="private.html">согласие на обработку
+                персональных
+                данных</a>. </div>
+            <div class="modal-footer">
+              <input type="submit" class="btn btn-primary" value="Отправить">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- Global Mailform Output-->
-  <div class="snackbars" id="form-output-global"></div>
+
   <!-- Java script-->
   <script src="js/core.min.js"></script>
   <script src="js/script.js"></script>
