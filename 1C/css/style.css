@@ -28657,7 +28657,7 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-banner .swiper-slide {
-  padding: 0 40px;
+  padding: 0 50px;
 }
 
 .swiper-banner .slide-content {
@@ -28684,6 +28684,10 @@ button.swiper-pagination-bullet {
   text-align: center;
   width: 40px;
   height: 40px;
+}
+
+.swiper-button:focus {
+  outline: none;
 }
 
 .swiper-button:hover {
