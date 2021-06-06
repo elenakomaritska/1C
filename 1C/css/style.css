@@ -20883,7 +20883,7 @@ fieldset[disabled] .btn-link:focus {
 
 @media (min-width: 480px) {
   .img-mobile-half-width {
-    max-width: none;
+    max-width: 100%;
   }
 }
 
@@ -28714,10 +28714,6 @@ button.swiper-pagination-bullet {
   padding: 0 50px;
 }
 
-.swiper-banner .slide-content {
-  width: 100%;
-}
-
 .swiper-wrapper {
   align-items: center;
 }
@@ -28756,16 +28752,8 @@ button.swiper-pagination-bullet {
 }
 
 @media (min-width: 480px) {
-  .swiper-banner .slide-content {
-    width: auto;
-  }
-
   .heading {
     font-size: 20px;
-  }
-
-  .mobile-hide {
-    display: block !important;
   }
 
   .list-item {
@@ -28775,7 +28763,11 @@ button.swiper-pagination-bullet {
 
 @media (min-width: 768px) {
   .heading {
-    font-size: 30px;
+    font-size: 25px;
+  }
+
+  .mobile-hide {
+    display: block !important;
   }
 
   .list-item {
@@ -28790,6 +28782,10 @@ button.swiper-pagination-bullet {
 }
 
 @media (min-width: 1280px) {
+  .swiper-banner .swiper-slide {
+    padding: 0 60px;
+  }
+
   .heading {
     font-size: 40px;
   }
