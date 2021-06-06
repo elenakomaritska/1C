@@ -101,6 +101,22 @@ $document.ready(function () {
 		$('.swiper-slide-visible .animate-text').animate_Text();
 		new WOW().init();
 	});
+	$('#slide1').click(informationSwiper, function () {
+		informationSwiper.slideTo(1);
+		console.log(1)
+	})
+	$('#slide2').click(informationSwiper, function () {
+		informationSwiper.slideTo(2);
+		console.log(2)
+	})
+	$('#slide3').click(informationSwiper, function () {
+		informationSwiper.slideTo(3);
+		console.log(3)
+	})
+	$('#slide4').click(informationSwiper, function () {
+		informationSwiper.slideTo(4);
+		console.log(4)
+	})
 
 	var clientsSwiper = new Swiper('.swiper-clients', {
 		slidesPerView: 1,
