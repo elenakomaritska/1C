@@ -1503,6 +1503,7 @@ img {
 }
 
 .img-responsive {
+  margin: 0 auto;
   display: block;
   max-width: 100%;
   height: auto;
@@ -28151,7 +28152,6 @@ html:not(.lt-ie10) .not-animated {
 
 .previevImg {
   margin: 0 auto;
-  display: block;
 }
 
 /**
