@@ -69,6 +69,10 @@ $document.ready(function () {
 		});
 	};
 
+	//Swiper
+	var url = window.location.href;
+	var start = url.substr(url.indexOf("#") + 1)
+
 	var informationSwiper = new Swiper('.swiper-banner', {
 		loop: true,
 		watchSlidesVisibility: true,
@@ -76,7 +80,7 @@ $document.ready(function () {
 		effect: 'fade',
 		spaceBetween: 0,
 		centeredSlides: true,
-		initialSlide: 0,
+		initialSlide: -1,
 		fadeEffect: {
 			crossFade: true
 		},
@@ -101,22 +105,19 @@ $document.ready(function () {
 		$('.swiper-slide-visible .animate-text').animate_Text();
 		new WOW().init();
 	});
-	$('#slide1').click(informationSwiper, function () {
-		informationSwiper.slideTo(1);
-		console.log(1)
-	})
-	$('#slide2').click(informationSwiper, function () {
-		informationSwiper.slideTo(2);
-		console.log(2)
-	})
-	$('#slide3').click(informationSwiper, function () {
-		informationSwiper.slideTo(3);
-		console.log(3)
-	})
-	$('#slide4').click(informationSwiper, function () {
-		informationSwiper.slideTo(4);
-		console.log(4)
-	})
+
+	informationSwiper.slideTo(getSlideIndex(start));
+
+	function getSlideIndex(ID) {
+		var index = 0;
+		$.each($('.swiper-slide'), function (i, item) {
+			if ($(item).attr("id") == ID) {
+				index = i;
+				return false;
+			}
+		});
+		return index;
+	}
 
 	var clientsSwiper = new Swiper('.swiper-clients', {
 		slidesPerView: 1,
@@ -964,23 +965,11 @@ $document.ready(function () {
 		}
 	}
 
-	// modal img
-	// var imageFullze = document.getElementById("imageFullze");
-
-	// var previevImg = document.querySelectorAll(".previevImg");
-	// var modalPrevievImg = document.getElementById("imgContent");
-
-	// previevImg.forEach(function (e, i) {
-	// 	e.addEventListener('click', function () {
-	// 		imageFullze.style.display = "flex";
-	// 		modalPrevievImg.src = this.src;
-	// 	})
-	// })
-
-	// var span = document.getElementsByClassName("close")[0];
-
-	// span.onclick = function () {
-	// 	imageFullze.style.display = "none";
-	// }
+	$(function () {
+		$('.previevImg').on('click', function () {
+			$('.imgContent').attr('src', $(this).find('img').attr('src'));
+			$('#imageFullze').modal('show');
+		});
+	});
 
 });
