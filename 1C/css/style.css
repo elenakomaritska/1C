@@ -28151,6 +28151,7 @@ html:not(.lt-ie10) .not-animated {
 
 .previevImg {
   margin: 0 auto;
+  display: block;
 }
 
 /**
